@@ -1,0 +1,962 @@
+.container {
+    z-index: 1;
+    position: relative;
+    margin-bottom:25px;
+    margin-top:25px;
+}
+
+h1{
+    margin-top: 2rem;
+    
+}
+h2{
+    font-weight: 900;
+}
+
+.nav-link:hover {
+    color: blue;
+
+}
+.social-link {
+    font-size: 16px;         /* Adjust font size here */
+    margin: 5px 0;           /* Adjust vertical spacing between items */
+    color: white;
+}
+
+.social-link i {
+    margin-right: 5px;       /* Space between icon and text */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("{{ background_image }}");
+    
+    background-size: cover;
+    background-position: center;
+}
+.login-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    
+    
+}
+.login-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+    text-align: center;
+}
+.form-outline .form-control {
+    background-color: #f1f1f1;
+}
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+}
+.additional-links {
+    font-size: 0.9rem;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("{{ background_image }}");
+    background-size: cover;
+    background-position: center;
+}
+.register-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+}
+.register-title {
+    font-size: 1.8rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .restaurant-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .restaurant-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .restaurant-info {
+    padding: 15px;
+  }
+  .restaurant-info h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+  .cuisine, .cost, .distance {
+    margin: 5px 0;
+    color: #555;
+  }
+  .rating {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  html, body {
+    height: 100%; /* Ensures the background covers the entire viewport */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+
+   background-image: url('loginbg.jpg');
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.navbar {
+display: flex;
+align-items: center; /* Center items vertically */
+justify-content: space-evenly; /* Space out logo and address */
+padding: 10px 20px; /* Add some padding */
+background-color: #333 /* Background color for navbar */
+}
+
+.nav-logo {
+display: flex;
+align-items: center; /* Center logo and text vertically */
+margin-left: 10px;
+}
+
+.logo {
+width: 80px; /* Adjust logo size */
+height: 80px; /* Adjust logo size */
+background-size: cover;
+background-color:  black; /* Placeholder for logo */
+margin-right: 10px; /* Space between logo and text */
+border-radius:5px;
+}
+
+.nav-address {
+display: flex;
+align-items: center; /* Center address and icon vertically */
+}
+
+.add-icon {
+margin-right: 5px; /* Space between icon and text */
+}
+.nav-links {
+    margin-right: 30px;
+    width: auto;
+    display: flex;
+    align-items: center; /* Fix typo from "align-item" */
+    justify-content: space-between;
+    gap: 20px; /* Add spacing between items for better readability */
+}
+
+.nav-links ul {
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Ensure horizontal alignment */
+}
+
+.nav-links li {
+    margin: 0 10px; /* Add horizontal spacing between links */
+}
+
+.nav-links a {
+    color: #ff6b6b; /* Set the link color */
+    text-decoration: none; /* Remove underline by default */
+    font-weight: 500; /* Slightly bold for readability */
+    font-size: 1rem; /* Adjust font size */
+    padding: 5px 10px; /* Add padding for better click area */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Rounded corners for hover background */
+}
+
+.nav-links a:hover {
+    text-decoration: none; /* Keep underline removed on hover */
+    background-color: #ff6b6b; /* Highlight the background */
+    color: #fff; /* White text on hover */
+}
+
+.nav-links .nav-item .list-group-item {
+    border: none; /* Remove borders for the logout link */
+    color: #ff6b6b;
+    background-color: transparent; /* Match the navbar background */
+}
+
+.nav-links .nav-item .list-group-item:hover {
+    color: white;
+    background-color: #ff6b6b; /* Add a hover effect for logout */
+}
+
+.nav-links .fas.fa-shopping-cart {
+    font-size: 1.2rem; /* Adjust cart icon size */
+    margin-left: 5px; /* Add slight spacing next to "Cart" */
+}
+
+
+.nav-address p {
+margin: 0; /* Remove default margin from paragraphs */
+}
+
+
+.nav-search {
+flex-grow: 1;
+display: flex;
+margin: 0 20px;
+}
+.nav-search input {
+width: 100%;
+padding: 12px 20px;
+border: none;
+border-radius: 4px 0 0 4px;
+}
+
+.nav-search button {
+padding: 12px 20px; /* Increased size */
+background-color:  #ff6b6b;
+border: none;
+border-radius: 0 4px 4px 0;
+cursor: pointer;
+}
+.location {
+display: flex;
+flex-direction: column; /* Stack the icon and text */
+align-items: center; /* Center items horizontally */
+margin-right: 20px; /* Space between location and logo */
+}
+
+.location i {
+font-size: 24px; /* Size of the location icon */
+color:   #ff6b6b;/* Icon color */
+}
+
+.location p {
+margin: 0; /* Remove default margin */
+color:  #ff6b6b; /* Text color */
+font-size: 12px; /* Font size for the text */
+text-align: center; /* Center text */
+}
+
+.container {
+    max-width: 600px; /* Reduced container width */
+    margin: 30px auto;
+    background-color: white;
+    padding: 15px; /* Slightly smaller padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f44336;
+    padding-bottom: 5px;
+    font-size: 18px; /* Smaller heading */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Reduced margin */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduced padding */
+    font-size: 14px; /* Smaller font size */
+    text-align: center;
+}
+
+th {
+    background-color: #f44336;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.status {
+    font-weight: bold;
+    padding: 3px 8px; /* Reduced padding */
+    border-radius: 5px;
+    font-size: 12px; /* Smaller status text */
+}
+
+.pending {
+    background-color: #FFA500;
+    color: white;
+}
+
+.delivered {
+    background-color: rgba(14, 158, 21, 0.6);
+    color: white;
+}
+
+.cancelled {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 40px 20px; /* Padding around the footer */
+    font-size: 14px; /* Font size */
+}
+
+.footer-container {
+    display: flex; /* Flex layout for sections */
+    justify-content: space-between; /* Space between sections */
+    flex-wrap: wrap; /* Wrap sections on smaller screens */
+}
+
+.footer-section {
+    flex: 1; /* Each section takes equal space */
+    margin: 10px; /* Margin around each section */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px; /* Spacing below the section heading */
+    font-size: 18px; /* Font size for section heading */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-section ul li {
+    margin-bottom: 8px; /* Spacing between list items */
+}
+
+.footer-section a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer-section a:hover {
+    color: #f44336; /* Change color on hover */
+}
+
+.icon {
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Center align icon with text */
+}
+
+.social-media {
+    display: flex; /* Flex layout for social media icons */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.social-media li {
+    margin-right: 10px; /* Spacing between icons */
+}
+
+.footer-bottom {
+    text-align: center; /* Center align the footer bottom text */
+    margin-top: 20px; /* Margin above the footer bottom */
+    font-size: 12px; /* Smaller font size */
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80vh; /* Makes the section cover most of the screen */
+    background-image: url('../image/mike-PxJ9zkM2wdA-unsplash.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: relative; /* Ensures child elements are positioned properly */
+  }
+  .hero-content {
+    max-width: 80%; /* Adjusts the content width */
+    color: white; /* Ensure text is readable over the background image */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Adds a shadow for better visibility */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .order-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .hero-image {
+    width: 40%;
+    border-radius: 10px;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      height: 60vh;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.5rem;
+    }
+
+    .order-btn {
+      width: 100%; /* Full-width button for better UX */
+    }
+  }
+  .menu {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+  }
+
+  .menu h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     /* Responsive grid */
+    gap: 20px;
+    justify-items: center; /* Aligns items horizontally */
+  }
+
+  .item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px; /* Controls the size of each card */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s;
+    margin-right: 20px;
+  }
+
+  .item img {
+    width: 100%; /* Makes the image fit the card */
+    height: 180px;
+    object-fit: cover; /* Ensures image doesn't get stretched */
+    border-radius: 10px;
+  }
+  .menu-items a{
+    text-decoration: none;
+  }
+  .item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .item p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .item:hover {
+    transform: scale(1.05); /* Adds a hover effect */
+  }
+
+
+  /*restraunt card*/
+ /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Slider Container */
+.restaurant-slider .slider-container {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider Track */
+.restaurant-slider .slider-track {
+  display: flex;
+  animation: slide 15s linear infinite;
+}
+
+/* Restaurant Card */
+.restaurant-slider .restaurant-card {
+  min-width: 300px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.restaurant-slider .restaurant-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.restaurant-slider .restaurant-info {
+  padding: 10px;
+  text-align: left;
+}
+
+.restaurant-slider .restaurant-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.restaurant-slider .restaurant-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.restaurant-slider .restaurant-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.restaurant-slider button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.restaurant-slider button:hover {
+  background-color: #e04e3d;
+}
+
+/* Keyframes for Auto Sliding */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-300px); }
+  45% { transform: translateX(-300px); }
+  50% { transform: translateX(-600px); }
+  70% { transform: translateX(-600px); }
+  75% { transform: translateX(-900px); }
+  95% { transform: translateX(-900px); }
+  100% { transform: translateX(0); }
+}
+
+
+/* explore different cuisines */
+/* Section Styles */
+.explore-cuisines {
+text-align: center;
+padding: 20px;
+background-color: #f8f8f8;
+}
+
+.explore-cuisines h2 {
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+/* Slider Styles */
+.cuisine-slider {
+overflow: hidden; /* Hide overflow for smooth sliding */
+position: relative;
+max-width: 100%; /* Make sure it doesn't extend beyond viewport */
+}
+
+.cuisine-list {
+display: flex;
+width: calc(180px * 12); /* Total width based on the number of cards */
+animation: slide 25s linear infinite; /* Smooth sliding animation */
+}
+
+/* Card Styles */
+.cuisine-card {
+min-width: 180px;
+text-align: center;
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+margin: 0 10px;
+overflow: hidden;
+transition: transform 0.3s ease;
+}
+
+.cuisine-card img {
+width: 100%;
+height: 120px;
+object-fit: cover;
+}
+
+.cuisine-card h3 {
+margin: 10px 0;
+font-size: 20px;
+color: #333;
+}
+
+.explore-button {
+display: inline-block;
+margin: 10px 0;
+padding: 8px 12px;
+background-color: #ff6347;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+/* Hover Effects */
+.cuisine-card:hover {
+transform: scale(1.05);
+}
+
+.explore-button:hover {
+background-color: #e55347;
+}
+
+/* Seamless Slider Animation */
+@keyframes slide {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); } /* Move halfway through the cards */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.cuisine-card {
+min-width: 150px;
+}
+}
+
+
+
+/* explore different cities */
+.explore-cities {
+text-align: center;
+padding: 20px;
+background-color: #f8f8f8; /* Light background for contrast */
+}
+
+.explore-cities h2 {
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+.city-list {
+display: flex;
+flex-wrap: wrap; /* Wrap cities to next line if necessary */
+justify-content: center; /* Center the cities */
+gap: 15px; /* Space between city cards */
+}
+
+.city-card {
+display: flex;
+align-items: center; /* Center text vertically */
+justify-content: center; /* Center text horizontally */
+width: 150px; /* Fixed width for consistency */
+height: 50px; /* Fixed height for uniformity */
+background-color: #e0f7fa; /* Light background color */
+color: #333; /* Darker text for better visibility */
+text-decoration: none; /* Remove underline from link */
+border-radius: 8px; /* Rounded corners */
+transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.city-card:hover {
+background-color: #b2ebf2; /* Darker shade on hover */
+transform: translateY(-3px); /* Lift effect on hover */
+}
+/* stop food wastage  */
+.food-waste-banner {
+background-color: #ffeb3b; /* Bright background color for visibility */
+text-align: center;
+padding: 20px;
+margin: 20px 0; /* Space above and below the banner */
+border-radius: 8px; /* Rounded corners */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.banner-content h2 {
+font-size: 24px; /* Size of the main heading */
+margin-bottom: 10px; /* Spacing below the heading */
+}
+
+.banner-content p {
+font-size: 16px; /* Size of the paragraph text */
+margin-bottom: 15px; /* Spacing below the paragraph */
+}
+
+.banner-button {
+display: inline-block; /* Block for padding */
+padding: 10px 15px; /* Padding inside the button */
+background-color: #f44336; /* Button color */
+color: white; /* Text color */
+text-decoration: none; /* Remove underline */
+border-radius: 5px; /* Rounded corners */
+transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.banner-button:hover {
+background-color: #d32f2f; /* Darker shade on hover */
+}
+/* coupons with thumbnail*/
+.deals {
+text-align: center; /* Center align the text */
+padding: 40px 20px; /* Padding around the section */
+}
+
+.deals h2 {
+font-size: 28px; /* Size of the section heading */
+margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.deals-container {
+display: grid; /* Use grid layout for the deals */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+gap: 20px; /* Space between cards */
+}
+
+.deal-card {
+background-color: #fff; /* White background for each card */
+border-radius: 8px; /* Rounded corners */
+overflow: hidden; /* Prevent overflow of content */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.deal-card:hover {
+transform: scale(1.05); /* Scale effect on hover */
+}
+
+.deal-card img {
+width: 100%; /* Full width for images */
+height: auto; /* Maintain aspect ratio */
+}
+
+.deal-info {
+padding: 15px; /* Padding inside the deal info */
+}
+
+.deal-info h3 {
+font-size: 20px; /* Heading size for deal titles */
+margin: 10px 0; /* Margin above and below the title */
+}
+
+.deal-info p {
+font-size: 14px; /* Size of the description text */
+margin-bottom: 15px; /* Spacing below the description */
+}
+
+.deal-button {
+display: inline-block; /* Block for padding */
+padding: 10px 15px; /* Padding inside the button */
+background-color: #f44336; /* Button color */
+color: white; /* Text color */
+text-decoration: none; /* Remove underline */
+border-radius: 5px; /* Rounded corners */
+transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.deal-button:hover {
+background-color: #d32f2f; /* Darker shade on hover */
+}
+/* rating review*/
+.ratings-reviews {
+text-align: center; /* Center align the text */
+padding: 40px 20px; /* Padding around the section */
+background-color: #f9f9f9; /* Light background color */
+}
+
+.ratings-reviews h2 {
+font-size: 28px; /* Size of the section heading */
+margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.reviews-container {
+display: grid; /* Use grid layout for reviews */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+gap: 20px; /* Space between cards */
+}
+
+.review-card {
+background-color: #fff; /* White background for each review card */
+border-radius: 8px; /* Rounded corners */
+padding: 20px; /* Padding inside the card */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.review-card:hover {
+transform: scale(1.05); /* Scale effect on hover */
+}
+
+.review-header {
+display: flex; /* Use flex for header layout */
+justify-content: space-between; /* Space between name and rating */
+align-items: center; /* Center align items vertically */
+}
+
+.rating {
+font-size: 20px; /* Size for the rating stars */
+color: #f44336; /* Color for the stars */
+}
+
+.review-card p {
+font-size: 14px; /* Size of the review text */
+margin-top: 10px; /* Margin above the review text */
+}
+/* FAQ*/
+/* FAQ Section Styling */
+.faq-section {
+background-color: #f9f9f9;
+padding: 40px;
+max-width: 800px;
+margin: auto;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+text-align: center;
+font-size: 32px;
+margin-bottom: 20px;
+color: #333;
+}
+
+.faq {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.faq-item {
+background-color: white;
+padding: 15px;
+border-radius: 5px;
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+
+.faq-item h3 {
+font-size: 20px;
+color: #ff6347;
+margin-bottom: 8px;
+}
+
+.faq-item p {
+font-size: 16px;
+color: #555;
+}
+
+.faq-item:hover {
+transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.faq-section {
+padding: 20px;
+}
+
+.faq-item h3 {
+font-size: 18px;
+}
+
+.faq-item p {
+font-size: 14px;
+}
+}
+a{
+text-decoration: none;
+}
+
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #ffe5e5; /* Light red for hover */
+}
+
+thead.thead-dark th {
+    background-color: #343a40;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-warning, .btn-danger {
+    margin-right: 5px;
+}
+
+.alert-link {
+    font-weight: bold;
+    color: #ff6b6b;
+}

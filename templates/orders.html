@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <h2>Current Orders</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in current_orders %}
+            {% set total_price = 0 %}
+            {% for item in order.order_items %}
+            <tr>
+                <td><strong>#{{ order.id }}</strong></td>
+                <td><strong>{{ item.dish.dish_name }}</strong></td>
+                <td><strong>{{ item.quantity }}</strong></td>
+                <td><strong>
+                    {% set item_total = item.dish.price * item.quantity %}
+                    {{ item_total }}
+                    {% set total_price = total_price + item_total %}
+                </strong>
+                </td>
+                <td>
+                    <strong>
+                        {% set remaining_time = (order.delivery_time - datetime.now()).total_seconds() %}
+                            {% if remaining_time > 0 %}
+                                Delivered in {{ (remaining_time // 60)|int }} minutes
+                            {% else %}
+                                Delivered
+                            {% endif %}
+                    </strong>
+                </td>
+
+
+            </tr>
+            {% endfor %}
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Order History</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in order_history %}
+            {% set total_price = 0 %}
+            {% for item in order.order_items %}
+            <tr>
+                <td>#<strong>{{ order.id }}</strong></td>
+                <td><strong>{{ item.dish.dish_name }}</strong></td>
+                <td><strong>{{ item.quantity }}</strong></td>
+                <td><strong>
+                    {% set item_total = item.dish.price * item.quantity %}
+                    {{ item_total }}
+                    {% set total_price = total_price + item_total %}
+                    </strong>
+                </td>
+                <td><strong>{{ order.status }}</strong></td>
+            </tr>
+            {% endfor %}
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+{%endblock%}
+

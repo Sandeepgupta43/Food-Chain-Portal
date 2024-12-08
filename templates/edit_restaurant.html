@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="register-container">
+  <div class="register-card">
+  <h2>Edit Restaurant</h2>
+  <form method="POST" action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="restaurant_name">Restaurant Name</label>
+      <input type="text" class="form-control" id="restaurant_name" name="restaurant_name" value="{{ restaurant.restaurant_name }}" required>
+    </div>
+    <div class="form-group">
+      <label for="cuisine">Cuisine</label>
+      <input type="text" class="form-control" id="cuisine" name="cuisine" value="{{ restaurant.cuisine }}">
+    </div>
+    <div class="form-group">
+      <label for="distance">Distance</label>
+      <input type="number" class="form-control" id="distance" name="distance" step="0.1" value="{{ restaurant.distance }}">
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="0" max="5" value="{{ restaurant.rating }}">
+    </div>
+    <div class="form-group">
+      <label for="image_file">Upload New Image</label>
+      <input type="file" class="form-control" id="image_file" name="image_file">
+      <p>Current Image: <img src="{{ url_for('static', filename=restaurant.image_url.split('static/')[1]) }}" alt="Current Image" width="100"></p>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Restaurant</button>
+  </form>
+  </div>
+</div>
+{% endblock %}

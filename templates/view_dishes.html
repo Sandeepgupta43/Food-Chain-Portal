@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center">{{ restaurant.restaurant_name }}</h2>
+  <p class="text-center text-muted">{{ restaurant.cuisine }}</p>
+  <p class="text-center"><strong>Distance:</strong> {{ restaurant.distance }} km</p>
+
+  {% if restaurant.rating %}
+  <p class="text-center">
+    <strong>Rating:</strong> <span class="rating text-warning">{{ restaurant.rating }}★</span>
+  </p>
+  {% endif %}
+
+  <hr>
+
+  <h3 class="text-center mb-4">Available Dishes</h3>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for dish in dishes %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ dish.image_url or url_for('static', filename='default_dish.jpg') }}" alt="{{ dish.dish_name }}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{ dish.dish_name }}</h5>
+          <p class="card-text">Price: ₹{{ dish.price }} {{ currency }}</p>
+          <form method="POST" action="{{ url_for('add_to_cart', dish_id=dish.id) }}">
+            <button type="submit" class="btn btn-primary w-100">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

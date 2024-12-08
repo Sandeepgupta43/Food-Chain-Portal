@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<div class="register-container">
+    <div class="register-card">
+        <h1 class="register-title">Retailer Registration</h1>
+        <form method="POST" onsubmit="return validateForm()">
+            <div class="form-outline mb-4">
+                <input type="text" id="retailer_name" class="form-control" name="name" required />
+                <label class="form-label" for="retailer_name">Retailer Name</label>
+                <span id="nameError" style="color:red;"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="email" id="email" class="form-control" name="email" required />
+                <label class="form-label" for="email">Email</label>
+                <span id="emailError" style="color:red;"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="password" id="password" class="form-control" name="password" required />
+                <label class="form-label" for="password">Password</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="password" id="confirm_password" class="form-control" name="confirm_password" required />
+                <label class="form-label" for="confirm_password">Confirm Password</label>
+                <span id="confirmPasswordError" style="color:red;"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="number" id="contact_number" class="form-control" name="contact_number" required />
+                <label class="form-label" for="contact_number">Contact number</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="address" class="form-control" name="address" />
+                <label class="form-label" for="address">Business Address</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="city" class="form-control" name="city" required />
+                <label class="form-label" for="city">City</label>
+            </div>
+            <div class="text-center pt-1 mb-5 pb-1">
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
+            </div>
+        </form>
+        <div class="text-center additional-links">
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% set background_image = url_for('static', filename='images/background.jpg') %}

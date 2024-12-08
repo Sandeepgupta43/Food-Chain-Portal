@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <div class="col-md-3 mb-2">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Location</h5>
+                <a href="{{ url_for('add_location') }}" class="btn btn-primary btn-block">Add location</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Users Section -->
+    <h2 class="text-center text-info mb-3">Users</h2>
+    <div class="table-responsive mb-5">
+        <table class="table table-hover table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.contact_number }}</td>
+                    <td>{% if user.is_admin %}Admin{% else %}User{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+       <!-- Retailer Section -->
+        <h2 class="text-center text-info mb-3">Retailers</h2>
+        <div class="table-responsive mb-5">
+            <table class="table table-hover table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact Number</th>
+                        <th>City</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for retailer in retailers %}
+                    <tr>
+                        <td>{{ retailer.id }}</td>
+                        <td>{{ retailer.name }}</td>
+                        <td>{{ retailer.email }}</td>
+                        <td>{{ retailer.contact_number }}</td>
+                        <td>{{ retailer.city }}</td>
+                        <td>{{ retailer.address }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}

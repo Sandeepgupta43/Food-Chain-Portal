@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+
+<!-- Add a New Dish -->
+        <div class="add-dish">
+            <a href="{{ url_for('add_dish') }}" class="btn btn-success">Add New Dish</a>
+        </div>
+<!-- Dishes List -->
+        <div class="container mt-5">
+            <h2 class="text-center">Your Dishes</h2>
+
+            {% if dishes %}
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Dish Name</th>
+                                <th>Restaurant</th>
+                                <th>Cuisine</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dish in dishes %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td><strong>{{ dish.dish_name }}</strong></td>
+                                    <td><strong>{{ dish.restaurant.restaurant_name }}</strong></td>
+                                    <td><strong>{{ dish.restaurant.cuisine }}</strong></td>
+                                    <td>
+                                        <a href="{{ url_for('edit_dish', dish_id=dish.id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ url_for('delete_dish', dish_id=dish.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info text-center">
+                    No dishes added yet. <a href="{{ url_for('add_dish') }}" class="alert-link">Add a new dish</a>
+                </div>
+            {% endif %}
+        </div>
+
+    {% endblock%}

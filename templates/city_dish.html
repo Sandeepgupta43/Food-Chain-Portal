@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4">Best Food in {{ location_name }}</h2>
+
+  {% if restaurants %}
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {% for restaurant in restaurants %}
+    <div class="col">
+      <a href="{{ url_for('view_dishes', restaurant_id=restaurant.id) }}" class="text-decoration-none">
+        <div class="card shadow-sm">
+          <img src="{{ restaurant.image_url or url_for('static', filename='default.jpg') }}" alt="{{ restaurant.restaurant_name }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
+            <p class="card-text">{{ restaurant.cuisine }}</p>
+            <p class="card-text"><small class="text-muted">{{ restaurant.distance }} km away</small></p>
+            {% if restaurant.rating %}
+            <p class="card-text text-warning">
+              <span class="rating">{{ restaurant.rating }}★</span>
+            </p>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-center">No restaurants found in this city.</p>
+  {% endif %}
+</div>
+{% endblock %}

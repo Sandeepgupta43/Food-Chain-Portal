@@ -1,0 +1,33 @@
+<!-- add_restaurant.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="register-container">
+  <div class="register-card">
+  <h2>Add a New Restaurant</h2>
+  <form method="POST" action="{{ url_for('add_restaurant') }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="restaurant_name">Restaurant Name</label>
+      <input type="text" class="form-control" id="restaurant_name" name="restaurant_name" required>
+    </div>
+    <div class="form-group">
+      <label for="cuisine">Cuisine</label>
+      <input type="text" class="form-control" id="cuisine" name="cuisine">
+    </div>
+    
+    <div class="form-group">
+      <label for="distance">Distance</label>
+      <input type="number" class="form-control" id="distance" name="distance" step="0.1" value="0.0">
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="0" max="5" value="0.0">
+    </div>
+    <div class="form-group">
+      <label for="image_file">Upload Image</label>
+      <input type="file" class="form-control" id="image_file" name="image_file">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Restaurant</button>
+  </form>
+  </div>
+</div>
+{% endblock %}

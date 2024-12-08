@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+
+    <!-- hero section with image banner -->
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Delicious Food Delivered to Your Door</h1>
+          <p>Order now and get exciting discounts!</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+       </section>
+       <section class="menu">
+    <h2>"A Feast of Flavors Just for You"</h2>
+    <div class="menu-items">
+        <!-- Pizza Category -->
+        <a href="{{ url_for('item_list', category_name='pizza') }}">
+        <div class="item">
+            <img src="../static/image/pizza.jpg" alt="Pizza">
+            <h4>Cheese Pizza</h4>
+            <p>₹299</p>
+        </div>
+        </a>
+        <!-- Other categories (Burgers, Pasta, etc.) -->
+        <a href="{{ url_for('item_list', category_name='burger') }}">
+        <div class="item">
+            <img src="../static/image/burger.jpg" alt="Burger">
+            <h4>Veggie Burger</h4>
+            <p>₹99</p>
+        </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='pasta') }}">
+        <div class="item">
+            <img src="../static/image/pasta.jpg" alt="Pasta">
+            <h4>Creamy Alfredo Pasta</h4>
+            <p>₹199</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='french fries') }}">
+          <div class="item">
+            <img src="../static/image/french fries.jpg" alt="Fries">
+            <h4>French Fries</h4>
+            <p>₹99</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='salad') }}">
+          <div class="item">
+            <img src="../static/image/greek salad.jpg" alt="Salad">
+            <h4>Greek Salad</h4>
+            <p>₹199</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='cream') }}">
+          <div class="item">
+            <img src="../static/image/vanilla ice-cream .jpg" alt="Ice Cream">
+            <h4>Vanilla Ice Cream</h4>
+            <p>₹149</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='momo') }}">
+          <div class="item">
+            <img src="../static/image/momos.jpg" alt="Momos">
+            <h3>Momos</h3>
+            <p>₹199</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='noodle') }}">
+          <div class="item">
+            <img src="../static/image/noodles.jpg" alt="Noodles">
+            <h4>Spicy Noodles</h4>
+            <p>₹199</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='cake') }}">
+          <div class="item">
+            <img src="../static/image/cake.jpg" alt="Cake">
+            <h4>Chocolate Cake</h4>
+            <p>₹299</p>
+          </div>
+        </a>
+        <a href="{{ url_for('item_list', category_name='paneer') }}">
+          <div class="item">
+            <img src="../static/image/paneer .jpg" alt="paneer">
+            <h4>paneer</h4>
+            <p>₹299</p>
+          </div>
+        </a>
+
+    </div>
+</section>
+
+</header>
+<!-- restraunt card section -->
+<section class="restaurant-slider">
+  <h2>Our Featured Restaurants</h2>
+  <div class="slider-container">
+    <div class="slider-track">
+        {% for rest in restaurant %}
+        <div class="restaurant-card">
+                <img
+                    src="{{ rest.image_url or url_for('static', filename='default.jpg') }}"
+                    alt="{{ rest.restaurant_name }}">
+                <div class="card-body text-center">
+                    <h3>{{ rest.restaurant_name }}</h3>
+                    <p>{{ rest.cuisine }}</p>
+                    <div class="restaurant-meta">
+                        <span>⭐ {{ rest.rating }}</span>
+                        <span>{{ rest.distance }} km</span>
+                    </div>
+                    <a href="{{ url_for('view_dishes', restaurant_id=rest.id) }}" class=""><button>Explore</button></a>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+      <!-- explore foods in different cities -->
+
+      <section class="explore-cities">
+        <h2>Explore Food in Different Cities</h2>
+        <div class="city-list">
+          <!-- Loop through each location and create a city card -->
+          {% for location in locations %}
+            <a href="{{url_for('city',location_id = location.id)}}" class="city-card">{{ location.city_name }}</a>
+          {% endfor %}
+
+          <a href="#" class="city-card">Explore Many More</a>
+        </div>
+      </section>
+
+      <!-- stop food wastage -->
+      <section class="food-waste-banner">
+        <div class="banner-content">
+          <h2>Join the Pledge to Stop Food Wastage!</h2>
+          <p>Together, we can make a difference. Sign the pledge to help reduce food waste and feed those in need.</p>
+          <a href="https://pledge.mygov.in/stop-food-wastage/" target="_blank" class="banner-button">Sign the Pledge</a>
+        </div>
+      </section>
+
+
+      <!--coupon code -->
+      <section class="deals">
+        <h2>Exciting Food Deals!</h2>
+        <div class="deals-container">
+          <!-- Deal Card 1 -->
+          <div class="deal-card">
+            <img src="../static/image/pizza deals.jpg" alt="Deal 1">
+            <div class="deal-info">
+              <h3>Buy 1 Get 1 Pizza</h3>
+              <p>Get a free pizza with every pizza purchase.</p>
+              <a href="{{url_for('maintanance')}}" class="deal-button">Grab Now</a>
+            </div>
+          </div>
+
+          <!-- Deal Card 2 -->
+          <div class="deal-card">
+            <img src="../static/image/burger deal.jpg" alt="Deal 2">
+            <div class="deal-info">
+              <h3>20% Off on Burgers</h3>
+              <p>Enjoy a delicious burger with 20% off today!</p>
+              <a href="{{url_for('maintanance')}}" class="deal-button">Grab Now</a>
+            </div>
+          </div>
+
+          <!-- Deal Card 3 -->
+          <div class="deal-card">
+            <img src="../static/image/desert deal.jpg" alt="deal 3" >
+            <div class="deal-info">
+              <h3>Free Dessert with Meal</h3>
+              <p>Order a meal and get a dessert for free!</p>
+              <a href="{{url_for('maintanance')}}" class="deal-button">Grab Now</a>
+            </div>
+          </div>
+
+          <!-- Deal Card 4 -->
+          <div class="deal-card">
+            <img src="../static/image/combo meals (2).jpg" alt="Deal 4">
+            <div class="deal-info">
+              <h3>Combo Meal Offer</h3>
+              <p>Special combo meals at an amazing price!</p>
+              <a href="{{url_for('maintanance')}}" class="deal-button">Grab Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- rating review -->
+      <section class="ratings-reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-container">
+          <!-- Review Card 1 -->
+          <div class="review-card">
+            <div class="review-header">
+              <h3>John Doe</h3>
+              <div class="rating">⭐ ⭐ ⭐ ⭐ ⭐</div>
+            </div>
+            <p>"The food was amazing! Delivery was quick and the flavors were on point."</p>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="review-card">
+            <div class="review-header">
+              <h3>Jane Smith</h3>
+              <div class="rating">⭐ ⭐ ⭐ ⭐</div>
+            </div>
+            <p>"Great service! The pizza was hot and delicious. Will order again!"</p>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="review-card">
+            <div class="review-header">
+              <h3>Emily Johnson</h3>
+              <div class="rating">⭐ ⭐ ⭐ ⭐ ⭐</div>
+            </div>
+            <p>"I loved the variety of cuisines available. Highly recommend!"</p>
+          </div>
+
+          <!-- Review Card 4 -->
+          <div class="review-card">
+            <div class="review-header">
+              <h3>Michael Brown</h3>
+              <div class="rating">⭐ ⭐ ⭐</div>
+            </div>
+            <p>"Good food, but the delivery took longer than expected."</p>
+          </div>
+        </div>
+      </section>
+      <!--FAQ -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h3>How do I place an order?</h3>
+            <p>Browse our menu, add items to your cart, and proceed to checkout. You can either sign in or place an order as a guest.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do I need an account to order?</h3>
+            <p>No, you can place an order as a guest. However, creating an account allows you to track your orders and save your favorite restaurants.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What are your delivery hours?</h3>
+            <p>Delivery hours vary by restaurant. Typically, deliveries are available from 9 AM to 11 PM.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How can I track my order?</h3>
+            <p>You can track your order in real-time from the "Track Order" section on the website or app.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept debit/credit cards, UPI, wallets, and cash on delivery (COD).</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I apply a promo code?</h3>
+            <p>Enter your promo code at checkout in the “Apply Coupon” section.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I request special instructions for my order?</h3>
+            <p>Yes, you can add special instructions at checkout (e.g., "No onions" or "Extra cheese").</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How can I contact customer support?</h3>
+            <p>You can reach us via email, phone, or through the "Contact Us" section on the website.</p>
+          </div>
+        </div>
+      </section>
+
+{% endblock %}

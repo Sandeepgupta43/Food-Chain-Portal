@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-card">
+        <h1 class="dashboard-title">Retailer Dashboard</h1>
+
+        <!-- Retailer Profile Info -->
+        <div class="profile-info">
+            <h2>Profile Information</h2>
+            <p><strong>Name:</strong> {{ retailer.name }}</p>
+            <p><strong>Email:</strong> {{ retailer.email }}</p>
+            <p><strong>Contact Number:</strong> {{ retailer.contact_number }}</p>
+            <p><strong>Address:</strong> {{ retailer.address }}</p>
+            <p><strong>City:</strong> {{ retailer.city }}</p>
+            <p><strong>Registration Date:</strong> {{ retailer.registration_date }}</p>
+            <p><strong>Status:</strong> {% if retailer.is_active %} Active {% else %} Inactive {% endif %}</p>
+
+            <a href="{{ url_for('edit_retailer_profile') }}" class="btn btn-primary">Edit Profile</a>
+        </div>
+        <br>
+            <br>
+        <div class="row mb-4">
+
+            <div class="col-md-3 mb-2">
+                <div class="card">
+
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Add</h5>
+                        <a href="{{ url_for('add_dish') }}" class="btn btn-primary btn-block">Add Dish</a>
+                        <a href="{{ url_for('add_restaurant') }}" class="btn btn-primary btn-block">Add Restaurant</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Transport Options -->
+            <div class="col-md-3 mb-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">View All Transport</h5>
+                        <a href="{{ url_for('all_dishes') }}" class="btn btn-secondary btn-block">All Dishes</a>
+                        <a href="{{ url_for('all_restaurants') }}" class="btn btn-secondary btn-block">All Restaurants</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
